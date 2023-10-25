@@ -11,24 +11,27 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/style.css">
-  <title>Love Math</title>
+  <title>Document</title>
 </head>
 
 <body>
-
   <h1 class="heading">
-    <img class="logo" src="assets/images/logo.png" alt="logo"> Love Math
+    <img class="logo" src="assets/images/logo.png" alt="logo"> Love Maths
   </h1>
 
   <div class="game-area">
     <div class="controls-area">
-      <button data-type="addition" class="btn btn--big btn--green"> <i class="fas fa-plus"></i>
+      <button data-type="addition" class="btn btn--big btn--green">
+        <i class="fas fa-plus"></i>
       </button>
-      <button data-type="substract" class="btn btn--big btn--blue"> <i class="fas fa-minus"></i>
+      <button data-type="subtract" class="btn btn--big btn--blue">
+        <i class="fas fa-minus"></i>
       </button>
-      <button data-type="multiply" class="btn btn--big btn--orange"> <i class="fas fa-times"></i>
+      <button data-type="multiply" class="btn btn--big btn--orange">
+        <i class="fas fa-times"></i>
       </button>
-      <button data-type="division" class="btn btn--big btn--red"> <i class="fas fa-divide"></i>
+      <button data-type="division" class="btn btn--big btn--red">
+        <i class="fas fa-divide"></i>
       </button>
     </div>
     <div class="question-area">
@@ -37,10 +40,10 @@
       <span id="operand2">0</span>
       <span>=</span>
       <p class="answer-message">Enter Answer:</p>
-      <input type="answer-box" type="number">
+      <input id="answer-box" type="number">
     </div>
+    <button data-type="submit" class="btn btn--gray">Submit Answer</button>
   </div>
-  <button class="btn btn--gray">Submit Answer</button>
 
   <div class="score-area">
     <p class="scores">Correct Answers <span id="score">0</span></p>
@@ -49,3 +52,5 @@
 
   <script src="assets/js/script.js"></script>
 </body>
+
+</html>
