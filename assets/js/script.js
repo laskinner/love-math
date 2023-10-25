@@ -13,7 +13,13 @@ document.addEventListener("DOMContentLoaded", function() {
         runGame(gameType);
       }
     });
-  } DocumentDocumentDocumentDocumentDocumentDocumentDocumentDocumentDocumentDocumentDocument
+  }
+
+  document.getElementById("answer-box").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      checkAnswer();
+    }
+  });
 
   runGame("addition");
 
@@ -24,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
  * and after the user's answer has been processed
  */
 function runGame(gameType) {
-
+  // Empties the answer field and focuses on answer field
   document.getElementById("answer-box").value = "";
   document.getElementById("answer-box").focus();
 
@@ -38,8 +44,9 @@ function runGame(gameType) {
     displayMultiplyQuestion(num1, num2);
   } else if (gameType === "subtract") {
     displaySubtractQuestion(num1, num2);
+  } else if (gameType === "division") {
+    displayDivideQuestion(num1, num2);
   }
-
 }
 
 /**
@@ -85,6 +92,8 @@ function calculateCorrectAnswer() {
     return [operand1 * operand2, "multiply"];
   } else if (operator === "-") {
     return [operand1 - operand2, "subtract"];
+  } else if (operator === "/") {
+    return [parseInt(operand1 / operand2), "division"];
   }
 
 }
@@ -125,5 +134,12 @@ function displayMultiplyQuestion(operand1, operand2) {
   document.getElementById('operand1').textContent = operand1;
   document.getElementById('operand2').textContent = operand2;
   document.getElementById('operator').textContent = "x";
+}
 
+function displayDivideQuestion(num1, num2) {
+  let operand1 = num1 * num2;
+  let operand2 = num2;
+  document.getElementById('operand1').textContent = operand1;
+  document.getElementById('operand2').textContent = operand2;
+  document.getElementById('operator').textContent = "/";
 }
